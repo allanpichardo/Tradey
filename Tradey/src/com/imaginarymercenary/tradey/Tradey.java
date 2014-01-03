@@ -19,10 +19,14 @@ public class Tradey {
 		new YahooStats(listener,symbol);
 	}
 	
+	public static void getQuotes(String[] symbols, OnDataReceivedListener listener){
+		new YahooQuote(listener, symbols);
+	}
+	
 	public interface OnDataReceivedListener{
 		public void onHistoricalDataReceived(YahooHistorical history);
 		public void onStatsDataReceived(YahooStats stats);
-		public void onQuoteDataReceived(YahooQuote quote);
+		public void onQuoteDataReceived(YahooQuote quotes);
 	}
 
 }
